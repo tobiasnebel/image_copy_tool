@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'image_tool'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=image_tool",
+                    "--package=image_tool"
+                ],
+                "filter": {
+                    "name": "image_tool",
+                    "kind": "bin"
+                }
+            },
+            "args": ["C:\\tmp\\img\\in", "C:\\tmp\\img\\out", ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "RUN BILDER/in --> BILDER/slideshow",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=image_tool",
+                    "--package=image_tool"
+                ],
+                "filter": {
+                    "name": "image_tool",
+                    "kind": "bin"
+                }
+            },
+            "args": ["C:\\BILDER\\in", "C:\\BILDER\\slideshow", ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'image_tool'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=image_tool",
+                    "--package=image_tool"
+                ],
+                "filter": {
+                    "name": "image_tool",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
